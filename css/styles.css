@@ -1,0 +1,149 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	text-align: center;
+	align: center;
+}
+
+div {
+	margin: 5px;
+}
+
+p {
+	padding: 5px;
+}
+
+#main {
+	width: 960px;
+	margin: auto;
+	text-align: left;
+}
+
+#top {
+
+}
+
+#top #fotito {
+	display: inline-block;
+}
+
+#top #desc {
+	vertical-align: top;
+	float: right;
+}
+
+#top h1 {
+	display: inline;
+}
+
+#menu {
+	padding: 5px;
+}
+
+#menu .menuitem,.menuitemselected {
+	background-color: gray;
+	margin: 2px;
+	display: inline;
+}
+
+#menu .menuitemselected {
+	background-color: white;
+}
+
+#menu .menuitemlink {
+	text-decoration: none;
+	width: 100%;
+}
+
+#menu .menuitemlink:HOVER {
+	background-color: aqua;
+}
+
+#menu .menuitemlink:VISITED {
+	color: #000;
+}
+
+#content {
+	min-height: 420px;
+}
+
+#footer {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 75%;
+}
+
+#tablecontact {
+	width: 75%;
+	text-align: center;
+}
+
+#tablecontact a {
+	text-decoration: none;
+	color: #444;
+}
+
+#tablecontact a:VISITED {
+	color: #444;
+}
+
+#tableexperience {
+	width: 75%;
+	text-align: center;
+	border: 1px solid #444;
+}
+
+#tableexperience tr {
+	width: 75%;
+	text-align: center;
+	border: 1px solid #444;
+}
+
+#profesionalpicture {
+	text-align: center;
+}
+
+#flair {
+	text-align: center;
+}
+
+#listcv li {
+	margin: 3px;
+}
+
+.projectlink {
+	display: block;
+}
+
+.projecticon {
+	max-width: 100px;
+	display: inline;
+	vertical-align: middle;
+}
+
+.projecttitle {
+	font-size: 1.4em;
+}
+
+.socialnettable{
+	width: 90%;
+	border: 1px solid #444;
+	border-spacing: 5px;
+}
+.socialnettable tr{
+	border: 1px solid #444;
+}
+.socialnettable tr td{
+	padding: 5px;
+}
+.socialnetlogo{
+	max-width: 200px;
+}
+
+.presencelist{
+
+}
+
+.presencelist li {
+	margin: 3px;
+}

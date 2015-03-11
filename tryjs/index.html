@@ -1,0 +1,154 @@
+<!-- This comment will put IE 6, 7 and 8 in quirks mode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="description"
+	content="Try javascript and jQuery code right here right now." />
+<meta name="keywords"
+	content="javascript jquery online edit run code try test" />
+
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="../css/base.css" type="text/css"
+	media="screen, projection" />
+<link rel="stylesheet" href="tryjs.css" type="text/css"
+	media="screen, projection" />
+<title>bit.ly/TRYJS</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"
+	type="text/javascript"></script>
+<script src="jquery.json-2.3.js" type="text/javascript"></script>
+</head>
+<body>
+	<h3>bit.ly/TRYJS</h3>
+	<div id="menu">
+		<a href="#">What?</a> <a href="#">Why?</a> <a href="#">Who?</a> <a
+			href="#">When?</a> <a href="#">Where?</a> <a href="#">FAQ</a>
+	</div>
+	<div id="bookmark">
+		Bookmark?
+	</div>
+	<table id="main">
+		<thead>
+			<tr>
+				<th>log</th>
+				<th>code</th>
+				<th>mydiv</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="rowsmall">
+				<td id="columnlogheader">&nbsp;</td>
+				<td id="columncodeheader">&lt;script src="jquery.1.6.4.min.js"
+					type="text/javascript"&gt;&lt;/script&gt;<br /> &lt;script
+					src="jquery.json-2.3.js" type="text/javascript"&gt;&lt;/script&gt;<br />
+					&lt;script type="text/javascript"&gt;<br /> try{</td>
+				<td id="columnmydivheader">&nbsp;</td>
+			</tr>
+
+			<tr class="rowbig">
+				<td><textarea readonly="readonly" id="log" ></textarea></td>
+				<td id="cellcode"><textarea id="code"></textarea></td>
+				<td>
+					<div id="mydiv"></div></td>
+			</tr>
+			<tr class="rowsmall">
+				<td>Use log(anyObject) to write a string here, and
+					logJSON(anyObject) to spy a complex object</td>
+				<td>}catch(error){<br /> &nbsp;&nbsp;&nbsp;&nbsp;log(error);<br />
+					}<br /> &lt;/script&gt;</td>
+				<td>Use this div to check dom related stuff, you can access it
+					with $('#mydiv')</td>
+			</tr>
+			<tr class="rowsmall">
+				<td><input type="button" id="clearLog"
+					value="Clear log Alt-Ctrl-L" onclick="$('#log').val('')" /></td>
+				<td><input type="button" id="focus" value="Focus F8"
+					onclick="$('#code').focus()" /> <input type="button" id="runCode"
+					value="Run code F9" /> <input type="button" id="clearCode"
+					value="Clear code Alt-Ctrl-C" onclick="$('#code').val('')" /></td>
+				<td><input type="button" id="clearMyDiv"
+					value="Clear mydiv Alt-Ctrl-M" onclick="$('#mydiv').html('')" /></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script>
+		function toStr(msg) {
+			if(typeof msg === 'undefined'){
+				return '<undefined>';
+			}else if (msg == null){
+				return '<null>';
+			}
+			return msg.toString();
+		}
+
+		function log(msg) {
+			var textAreaLog = $('#log');
+			var strMsg = toStr(msg);
+			textAreaLog.val(textAreaLog.val() + strMsg.toString() + '\n');
+			textAreaLog = textAreaLog[0]; // the real element, not the jQuery wrapper
+			textAreaLog.scrollTop = textAreaLog.scrollHeight;
+		};
+		function logJSON(obj) {
+			log($.toJSON(obj));
+		};
+
+		$(document).ready(
+				function() {
+					$('#runCode').click(function(event) {
+						var code = $('#code').val();
+						try {
+							eval(code);
+						} catch (error) {
+							log(error);
+						}
+					});
+					$('body').keyup(
+							function(event) {
+								if (event.altKey && event.ctrlKey) {
+									if (event.which == 76) { //L
+										$('#clearLog').click();
+									} else if (event.which == 67) {//C
+										$('#clearCode').click();
+									} else if (event.which == 77) {//M
+										$('#clearMyDiv').click();
+									}
+								} else if (!event.altKey && !event.ctrlKey){
+									if(event.which == 119) {//F8
+										$('#focus').click();
+									}
+									else if(event.which == 120) {//F9
+										$('#runCode').click();
+									}
+								}
+							});
+					$('#code').focus(function() {
+						$(this).css('background-color', '#e0f0e0');
+					}).blur(function() {
+						$(this).css('background-color', 'white');
+					}).focus();
+					$('#menu a').click(function(e){
+							var text = $(this).text();
+							var lastChar = text.charAt( text.length-1 );
+							var anchor = "";
+							if(lastChar == "?"){
+								anchor = text.substr(0, text.length - 1).toLowerCase();
+							}else{
+								anchor = text.toLowerCase();
+							}
+							window.location = "questions.html#" + anchor;
+						}
+					)
+					$('#bookmark').text(function(){
+				        var ua = navigator.userAgent.toLowerCase();
+				        var isMac = ua.indexOf('mac') != - 1;
+				        var metaKey = (isMac ? 'Command/Cmd' : 'CTRL') ;
+
+				        return  'Press ' + metaKey + ' + D to bookmark this page.';
+					});
+				});
+	</script>
+</body>
+</html>

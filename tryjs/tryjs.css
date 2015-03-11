@@ -1,0 +1,116 @@
+@CHARSET "ISO-8859-1";
+
+#main {
+	width: 90%;
+	height: 88%;
+	border: 1px solid black;
+}
+
+#main thead tr {
+	height: 2em;
+}
+
+h3 {
+	display: inline;
+}
+
+#menu {
+	display: inline;
+	margin-left: 100px;
+}
+
+#bookmark {
+	display: inline;
+	margin-left: 200px;
+}
+
+
+#menu a {
+	margin-left: 20px;
+}
+
+.rowsmall {
+	min-height: 2em;
+}
+
+.rowbig {
+	height: 100%;
+}
+
+#columnlogheader {
+	width: 25%;
+}
+
+#columncodeheader {
+	width: 50%;
+}
+
+#columnmydivheader {
+	width: 25%;
+}
+
+tr {
+	font-size: .8em;
+}
+
+td {
+	padding: 2px;
+}
+
+textarea {
+	width: 100%;
+	height: 95%;
+	overflow: auto;
+	font-family: monospace;
+	font-size: 1.2em;
+	margin-top: 0px;
+}
+
+#log {
+	background-color: #f0f0f0;
+}
+
+#mydiv {
+	background-color: #a0a0f0;
+	min-width: 100%;
+	max-width: 100%;
+	width: 100%;
+	min-height: 95%;
+	max-height: 95%;
+	height: 95%;
+	overflow: auto;
+}
+
+#cellcode {
+	padding-left: 2em;
+}
+
+.question {
+	margin-left: 20px;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.answer {
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.thinbody {
+	max-width: 700px;
+	width: 700px;
+
+}
+
+.backTop {
+	position: fixed;
+	top: 10px;
+	left: 710px;
+	float: left;
+}
+
+.backBottom {
+	position: fixed;
+	bottom: 10px;
+	left: 710px;
+}
