@@ -19,7 +19,26 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 
+<style type="text/css">
+html {
+	position: relative;
+	min-height: 100%;
+}
 
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #f5f5f5;
+}
+</style>
 
 </head>
 <body>
@@ -464,10 +483,10 @@
 					suggestion. We'll take a look. </a><br /> As&iacute; que si el
 				d&iacute;a de ma&ntilde;ana est&aacute;a programando en java, y
 				pueden escribir a.isGreaterThan(b) en vez de a.compareTo(b) &gt; 0,
-				es gracias a m&iacute;!<br /> <br /> Adem&aacute;s, mis perfiles en
-				redes laborales, de los cuales ya habl&eacute; en la secci&oacute;n
-				<a href="index.php?menu=redes%20sociales">Redes Sociales</a> , pero
-				vuelvo a mencionar brevemente aqu&iacute;:
+				es gracias a m&iacute;!<br /> <br /> Adem&aacute;s, mis perfiles
+				en redes laborales, de los cuales ya habl&eacute; en la
+				secci&oacute;n <a href="index.php?menu=redes%20sociales">Redes
+					Sociales</a> , pero vuelvo a mencionar brevemente aqu&iacute;:
 				<ul class="presencelist">
 					<li><a href="http://www.linkedin.com/in/pablogrisafi1975">Perfil
 							en LinkedIn</a></li>
@@ -483,16 +502,16 @@
 						href="http://stackoverflow.com/users/254307/pablo-grisafi">Perfil
 							en StackOverflow</a></li>
 				</ul>
-				<div class = "text-center">
-				&#161;Y ya tengo mi flair y todo!<br />
-				<div id="flair">
-					<a href="http://stackoverflow.com/users/254307/pablo-grisafi">
-						<img src="http://stackoverflow.com/users/flair/254307.png"
-						width="208" height="58"
-						alt="profile for Pablo Grisafi at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-						title="profile for Pablo Grisafi at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
-					</a>
-				</div>
+				<div class="text-center">
+					&#161;Y ya tengo mi flair y todo!<br />
+					<div id="flair">
+						<a href="http://stackoverflow.com/users/254307/pablo-grisafi">
+							<img src="http://stackoverflow.com/users/flair/254307.png"
+							width="208" height="58"
+							alt="profile for Pablo Grisafi at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+							title="profile for Pablo Grisafi at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+						</a>
+					</div>
 				</div>
 
 
@@ -500,127 +519,26 @@
 		</div>
 	</div>
 
-	<div role="tabpanel"></div>
-</body>
-</html>
-<!-- 
-	
-
-
-
-
-		<?php $menuSelected = drawMenu();
-		echo '<div id = "content">';
-		include $menuSelected[filename];
-		echo '</div>'
-		?>
-		<div id="footer">
-			El dise&ntilde;o de esta p&aacute;gina es enteramente m&iacute;o, lo
-			que muestra mi pobre capacidad est&eacute;tica. Pero el css utilizado
-			se basa en <a
-				href="http://thinkvitamin.com/design/setting-rather-than-resetting-default-styling/">base.css</a>
-			de Thierry Koblentz.(Una excelente manera de comenzar un sitio
-			m&aacute;s o menos cross-browser y con un aspecto al menos decente)<br />
-			Esta p&aacute;gina no contiene ni una miserable l&iacute;nea de
-			javascript. Los men&uacute;es se crean din&aacute;micamente gracias a
-			la magia de <a href="http://www.php.net">PHP</a>. Parece andar
-			nom&aacute;s.<br /> Est&aacute; gentil y gratuitamentemente hosteada
-			por <a href="http://x10hosting.com/">x10hosting</a>.<br />
-			x10hosting te da php, mysql y varias otras cosas m&aacute;s a cambio
-			de que entres en su foro una vez cada 15 d&iacute;as. &#161;Eso es
-			servicio!<br /> El favicon est&aacute; tomado de <a
-				href="http://stackoverflow.com">StackOverflow</a> (es la imagen que
-			generaron para mi perfil; autom&aacute;ticamente) y convertido de
-			formato gracias a <a href="http://favicon.htmlkit.com/">FavIcon
-				from Pics</a> <a href="http://validator.w3.org/check?uri=referer"><br />
-				<img src="http://www.w3.org/Icons/valid-xhtml10"
-				alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+	<footer class="footer">
+		<div class="container text-muted">
+			<h6>
+				El dise&ntilde;o de esta p&aacute;gina es enteramente m&iacute;o, lo
+				que muestra mi pobre capacidad est&eacute;tica. Se basa en se basa
+				en <a href="http://getbootstrap.com/">bootstrap</a>, como todo lo
+				que nos rodea. Esta p&aacute;gina est&aacute; gentil y
+				gratuitamentemente hosteada por <a href="http://x10hosting.com/">x10hosting</a>.
+				x10hosting te da php, mysql y varias otras cosas m&aacute;s a cambio
+				de que entres en su foro una vez cada 15 d&iacute;as. &#161;Eso es
+				servicio! El favicon est&aacute; tomado de <a
+					href="http://stackoverflow.com">StackOverflow</a> (es la imagen que
+				generaron para mi perfil; autom&aacute;ticamente) y convertido de
+				formato gracias a <a href="http://favicon.htmlkit.com/">FavIcon
+					from Pics</a> <a href="http://validator.w3.org/check?uri=referer">
+					<img src="http://www.w3.org/Icons/valid-xhtml10"
+					alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+				</a>
+			</h6>
 		</div>
-	</div>
+	</footer>
 </body>
 </html>
-
-
-
-
-
-<?php
-function drawMenu(){
-	$menuRequested = array_key_exists('menu', $_GET) ? $_GET['menu'] : 'bienvenido';
-	$menuItems = getMenuItems($menuRequested);
-
-	echo '<ol id="menu">';
-	foreach($menuItems as $menuItem){
-		drawMenuItem($menuItem);
-		if($menuItem['selected']){
-			$menuSelected = $menuItem;
-		}
-	}
-	echo '</ol>';
-	return $menuSelected;
-}
-
-function drawMenuItem($menuItem){
-	if($menuItem[selected]){
-		echo '<li class="menuitemselected">';
-		echo $menuItem['menulabel'];
-		echo '</li>';
-	}else{
-		echo '<li class="menuitem">';
-		echo '<a class="menuitemlink" href="index.php?menu='.$menuItem['menuname'].'" >';
-		echo $menuItem['menulabel'];
-		echo '</a>';
-		echo '</li>';
-	}
-}
-
-function getMenuItems($menuRequested){
-	$list = array();
-	$dir = opendir(".");
-	$oneMenuIsSelected = false;
-	while (($filename = readdir($dir)) !== false) {
-		if(!is_dir($filename) && strStartsWith($filename, "menu_")){
-			$menuname = getMenuName($filename);
-			$menulabel = getMenuLabel($menuname);
-			$menuItem = array("filename" => $filename, "menuname" => $menuname, "menulabel" => $menulabel);
-			if($menuname == $menuRequested){
-				$menuItem['selected'] = true;
-				$oneMenuIsSelected = true;
-			}else{
-				$menuItem['selected'] = false;
-			}
-			//echo "filename: ".$menuItem['filename']."  menuname: ".$menuItem['menuname']."  menulabel: ".$menuItem['menulabel']."<br />";
-			$list[] = $menuItem;
-		}
-	}
-	if($oneMenuIsSelected == false){
-		$list[0]['selected'] = true;
-	}
-	usort($list, "sort_by_filename");
-
-	return $list;
-}
-// Define the custom sort function
-function sort_by_filename($a,$b) {
-	return $a['filename']>$b['filename'];
-}
-
-function getMenuName($filename){
-	$noMenu = substr($filename, 8, strlen($filename) - 4 - 8);
-	return str_replace("_", " ", $noMenu);
-}
-
-function getMenuLabel($menuname){
-	return strtoupper(substr($menuname, 0, 1)).substr($menuname, 1);
-}
-
-
-
-
-function strStartsWith($haystack, $needle){
-	$length = strlen($needle);
-	return (substr($haystack, 0, $length) === $needle);
-}
-
-?>
- -->
