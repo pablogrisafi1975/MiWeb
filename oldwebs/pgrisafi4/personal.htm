@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="es-ar">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Personal</title>
+<script language="JavaScript">
+var message="¡¡¡Ese botón no!!!"; // Mensage ante el click derecho
+
+function click(i) 
+	{
+	if (document.all)
+		{
+		if (event.button == 2)
+			{
+			alert(message);
+			return false;
+			}
+	}
+
+if (document.layers)
+	{
+	if (i.which == 3)
+		{
+		alert(message);
+		return false;
+		}
+	}
+}
+
+if (document.layers)
+	{document.captureEvents(Event.MOUSEDOWN);}
+document.onmousedown=click;
+</script>
+</head>
+
+<body bgcolor="#C0C0C0" text="#000000" topmargin="0" leftmargin="0">
+
+<p align="center"><b>Datos Personales</b></p>
+<p align="center"><img border="0" src="ojosasi7.gif" width="50%" height="50%"></p>
+<p align="center">Como esta es una página solo para amigos, no tiene sentido
+que figuren mis datos personales.</p>
+<p align="center">De cualquier modo, mi número de ICQ es 85300031</p>
+<p align="center">y en este momento estoy </p>
+<p align="center"><img src="http://wwp.icq.com/scripts/online.dll?icq=85300031&img=6"></p>
+</body>
+
+</html>
