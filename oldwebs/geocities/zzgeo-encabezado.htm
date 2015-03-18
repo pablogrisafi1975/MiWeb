@@ -11,25 +11,31 @@
 <base target="principal">
 
 <script language="JavaScript">
-var tocado=0;
+var tocado=-1;
 
 function notocar() {
-     if (tocado==0)
+	tocado++;
+     if (tocado==0){
        alert("Dije No Tocar");
-     if(tocado==1)
+     }
+     if(tocado==1){
        alert("Ya te dije No Tocar");
-	  if(tocado==2)
+     }
+	  if(tocado==2){
        alert("¿Cómo te lo tengo que decir?");
-     if(tocado==3)
+	  }
+     if(tocado==3){
        alert("¿Cómo carajo te lo tengo que decir?");
-     if(tocado==4)
-       alert("No toqués más!!!"); 
-     if(tocado==5) 
+     }
+     if(tocado==4){
+       alert("No toqués más!!!");
+     }
+     if(tocado==5){ 
      	alert("Ta  bien, tocá,nomás");
-     if(tocado>=6)  
+     }
+     if(tocado>=6){  
      	loca();
-
-  tocado++;   	
+     }
   }
 function loca() {
    msg=open("zzgeo-locura.htm","DisplayWindow","toolbar=no,directories=no,menubar=no,fullscreen=yes,scrollbars=yes");
@@ -118,7 +124,7 @@ document.onmousedown=click;
  return true"><img border="0" src="boton-antro.gif" width="40" height="40" alt="Antropología"></a>
 <a href="#" onclick="alert('No funciona'); return false;" onMouseOver="windowstatus1('Colaboraciones');
  return true"><img border="0" src="boton-cola.gif" width="40" height="40" alt="Colaboraciones"></a>  
- <a href="zzgeo-encabezado.htm" onMouseOver="windowstatus1('Por favor no toque aquí');return true"  onclick="notocar()" target="_self"><img border="0" src="boton-no.gif" width="40" height="40" alt="No tocar"></a> 
+ <a href="zzgeo-encabezado.htm" onMouseOver="windowstatus1('Por favor no toque aquí');"  onclick="notocar();return false;" target="_self"><img border="0" src="boton-no.gif" width="40" height="40" alt="No tocar"></a> 
 <a href="zzgeo-subliminal-1.htm" onMouseOver="windowstatus1('Publicidad Subliminal');return true"><img border="0" src="boton-subli.gif" width="40" height="40" alt="Publicidad subliminal"></a> 
  <a href="zzgeo-salir.htm" onMouseOver="windowstatus1('Salir');return true" ><img border="0" src="boton-salir.gif" width="37" height="40" alt="Salir"></a> </p>
     </td>

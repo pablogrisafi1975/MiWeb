@@ -41,7 +41,7 @@ if (document.layers)
 document.onmousedown=click;
 var estatus=0;
 function windowstatus1(txt) {
-   window.status = txt;
+	window.top.document.getElementById('windowstatus').innerHTML = txt;
    estatus=1;
    setTimeout("borrarbarra()",1000);
 }
@@ -52,18 +52,19 @@ function borrarbarra() {
 var i=1;
 function miscroll1() 
 	{
-	if (estatus==0)
+	var windowstatus = window.top.document.getElementById('windowstatus');
+	if (estatus==0 || true)
 		{
-		if(i==1){window.status="-- Página personal de Pablo Grisafi --";}
-		if(i==2){window.status="/ Página personal de Pablo Grisafi /";}
-		if(i==3){window.status=" | Página personal de Pablo Grisafi |";}
-		if(i==4){window.status="\\ Página personal de Pablo Grisafi \\";}
+		if(i==1){windowstatus.innerHTML="-- Página personal de Pablo Grisafi --";}
+		if(i==2){windowstatus.innerHTML="/ Página personal de Pablo Grisafi /";}
+		if(i==3){windowstatus.innerHTML=" | Página personal de Pablo Grisafi |";}
+		if(i==4){windowstatus.innerHTML="\\ Página personal de Pablo Grisafi \\";}
 		i++;
-		if(i==5){i=1;}
+		if(i>=5){i=1;}
 		}
 	setTimeout("miscroll1()",100);
 	}
-
+miscroll1();
 </script>
 
 </head>
@@ -117,7 +118,7 @@ var DOTSIZE = 11;
   // bouncing off a wall
 var BOUNCE = 0.75;
 
-var isNetscape = navigator.appName=="Netscape";
+var isNetscape = false;//navigator.appName=="Netscape";
 
   // always on for now, could be played with to
   // let dots fall to botton, get thrown, etc.
@@ -142,8 +143,10 @@ function init()
     
     // set their positions
     for (i = 0; i < nDots; i++) {
-        dots[i].obj.left = dots[i].X;
-        dots[i].obj.top = dots[i].Y;
+    	if( dots[i].obj){
+        	dots[i].obj.left = dots[i].X;
+        	dots[i].obj.top = dots[i].Y;
+    	}
     }
     
     
@@ -154,7 +157,7 @@ function init()
     } else {
         // let dots sit there for a few seconds
         // since they're hiding on the real vs
-        setTimeout("startanimate()", 2000);
+        setTimeout("startanimate()", 200);
     }
 }
 
@@ -208,9 +211,9 @@ function MoveHandler(e)
 }
 
 // just save mouse position for animate() to use
-function MoveHandlerIE() {
-    Xpos = window.event.x + document.body.scrollLeft;
-    Ypos = window.event.y + document.body.scrollTop;      
+function MoveHandlerIE(e) {
+    Xpos = e.clientX + document.body.scrollLeft;//window.event.x + document.body.scrollLeft;
+    Ypos = e.clientY + document.body.scrollTop;//window.event.y + document.body.scrollTop;      
 }
 
 if (isNetscape) {
@@ -251,7 +254,7 @@ function animate() {
         start = 1;
     }
     
-    for (i = start ; i < nDots; i++ ) {
+    for (var i = start ; i < nDots; i++ ) {
         
         var spring = new vec(0, 0);
         if (i > 0) {
@@ -317,8 +320,10 @@ function animate() {
         }
         
         // move img to new position
-        dots[i].obj.left = dots[i].X;                   
-        dots[i].obj.top =  dots[i].Y;           
+        if( dots[i].obj){
+        	dots[i].obj.left = dots[i].X + 'px';                   
+        	dots[i].obj.top =  dots[i].Y + 'px';
+        }
     }
 }
 

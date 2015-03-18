@@ -38,3 +38,6 @@ p code {
 .modal-body{
 	height: 550px;
 }
+#windowstatus{
+	text-align: left;
+}
