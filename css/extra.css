@@ -6,6 +6,13 @@ html {
 body {
 	/* Margin bottom by footer height */
 	margin-bottom: 60px;
+	overflow-y:scroll; /* always show vertical scroll, to avoid center jumps*/
+}
+
+@media (max-width: 480px) { 
+    .nav-tabs > li {
+        float:none; /* acceptable tabs in mobile browsers */ 
+    }
 }
 
 .footer {
