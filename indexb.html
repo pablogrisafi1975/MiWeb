@@ -19,7 +19,7 @@
 <body>
   <a id="top"></a>
   <div class="container page-header">
-    <nav class="navbar navbar-default ">
+    <nav class="navbar navbar-default navbar-fixed-top container" >
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -48,7 +48,7 @@
       <!-- /.container-fluid -->
     </nav>
   </div>
-  <div class="container" id="myTabs">
+  <div class="container" id="my-tabs">
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="bienvenido">
         <div class="row">
@@ -115,9 +115,9 @@
           con el título de Ingeniero en Sistemas de Información.<br /> He trabajado realizando análisis y desarrollo en
           lenguaje <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java
           </a> de aplicaciones Web, dentro de frameworks estandard de mercado, como <a href="http://www.springsource.org/"
-            target="_blank">Spring</a>/ <a href="http://struts.apache.org/">Struts</a>/ <a
-            href="http://struts.apache.org/2.x/index.html" target="_blank">Strus2</a>/ <a
-            href="http://www.hibernate.org/" target="_blank">Hibernate</a>/ <a
+            target="_blank">Spring</a>/<a href="http://struts.apache.org/" target="_blank">Struts</a>/<a
+            href="http://struts.apache.org/2.x/index.html" target="_blank">Strus2</a>/<a
+            href="http://www.hibernate.org/" target="_blank">Hibernate</a>/<a
             href="http://www.oracle.com/technetwork/java/javaee/jsp/index.html" target="_blank">JSP</a>, y en también en
           la especificación <a href="http://www.oracle.com/technetwork/java/javame/index.html" target="_blank">JME</a>
           para celulares.<br /> También he ganado experiencia realizando análisis y desarrollo en lenguaje <a
@@ -398,7 +398,7 @@
             (Como evitar preguntar <code class="text-primary">if (InvokeRequired)</code> a cada rato en una GUI
             multithread en C#)</li>
         </ul>
-        ésto es extaordinario: me animé y mandé un mailcito a la lista de correo de lambda-dev donde se está
+        Ésto es extaordinario: me animé y mandé un mailcito a la lista de correo de lambda-dev donde se estaba
         desarrollando java8, con closures. Mandé una sugerencia menor <a
           href="http://mail.openjdk.java.net/pipermail/lambda-dev/2012-June/005012.html" target="_blank"> que pueden
           ver aquí</a> y Brian Goetz, el hombre a cargo del asunto, me respondió <a
@@ -458,8 +458,9 @@
   </div>
   <div class="container">
     <div id="back-to-top" class="start-hidden">
-      <a class="glyphicon glyphicon-arrow-up center" href="#top" title="Volver al principio"></a>
-      Volver al principio
+      <a href="#top" title="Volver al principio">
+        <span class="glyphicon glyphicon-arrow-up"></span> Volver al principio
+      </a>
     </div>
   </div>
   <footer class="footer ">

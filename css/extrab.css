@@ -11,6 +11,10 @@ body {
 	font-family: 'Roboto', serif;
 }
 
+#my-tabs {
+	margin-top: 60px;
+}
+
 .modal {
 	/*
 	http://stackoverflow.com/questions/19960162/bootstrap-3-modal-fires-and-causes-page-to-shift-to-the-left-momentarily-brows
@@ -30,10 +34,10 @@ body {
 }
 
 .page-header {
-	margin-top: 10px;
 	border-bottom-width: 0px;
 	margin-bottom: 1px;
 }
+
 
 .small-picture {
 	width: 68px;
