@@ -11,16 +11,40 @@ body {
 	font-family: 'Roboto', serif;
 }
 
-#my-tabs {
-	margin-top: 60px;
+.btn-responsive-text {
+	white-space: normal !important;
+	word-wrap: break-word !important;
+	word-break: normal !important;
 }
 
-#proyectos img{
+/* small screen , condensed menu*/
+#my-tabs {
+	margin-top: 40px;
+}
+
+/* medium screen, two lines menu */
+@media ( min-width :768px) {
+	#my-tabs {
+		margin-top: 170px;
+	}
+}
+
+/* big screen, one lines menu*/
+@media ( min-width :1200px ) {
+	#my-tabs {
+		margin-top: 50px;
+	}
+}
+
+
+#proyectos img {
 	margin-right: 15px;
 }
-#redes-sociales img{
+
+#redes-sociales img {
 	margin-right: 15px;
 }
+
 .modal {
 	/*
 	http://stackoverflow.com/questions/19960162/bootstrap-3-modal-fires-and-causes-page-to-shift-to-the-left-momentarily-brows
@@ -35,7 +59,7 @@ body {
 	overflow-y: scroll;
 }
 
-.start-hidden{
+.start-hidden {
 	display: none;
 }
 
@@ -43,7 +67,6 @@ body {
 	border-bottom-width: 0px;
 	margin-bottom: 1px;
 }
-
 
 .small-picture {
 	width: 68px;
