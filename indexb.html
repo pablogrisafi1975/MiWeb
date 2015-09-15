@@ -8,7 +8,6 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
- 
 <!-- <link rel="stylesheet" href="bootstrap-metro/bootstrap.css"> -->
 <link rel="stylesheet" href="css/extrab.css">
 <link rel="stylesheet" href="bootstrap-3.3.2-dist/css/bootstrap-theme.min.css">
@@ -19,7 +18,7 @@
 <body>
   <a id="top"></a>
   <div class="container page-header">
-    <nav class="navbar navbar-default navbar-fixed-top container" >
+    <nav class="navbar navbar-default navbar-fixed-top container">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -206,177 +205,247 @@
         </p>
       </div>
       <div role="tabpanel" class="tab-pane" id="proyectos">
-        <p>He aquí una lista de proyectos descargables publicamente en los que he trabajado más por amor al arte que
-          por otro motivo.</p>
+        <p class="text-center">He aquí una lista de proyectos descargables publicamente en los que he trabajado más
+          por amor al arte que por otro motivo.</p>
         <p>
-        <div class="text-center">
-          <a href="https://github.com/pablogrisafi1975/bignumutils/" target="_blank"> <span>BigNumUtils</span>
-          </a>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a href="https://github.com/pablogrisafi1975/bignumutils/" target="_blank" class="panel-title">BigNumUtils
+                </a>
+              </div>
+              <div class="panel-body">
+                <p>Es un mini dsl para Java que permite trabajar con BigDecimal y BigInteger casi como si Java
+                  tuviera sobrecarga de operadores. Bueno, al menos el código es mas legible y respeta la precedencia
+                  matemática de operadores.</p>
+                <div class="text-center">
+                  Es decir, permite que una operacion matemática como<br />
+                  <code class="text-primary"> a = b + c * d </code>
+                  <br /> En vez de escribirse<br />
+                  <code class="text-warning"> BigDecimal a = b.add((c.multiply(d)); </code>
+                  <br /> Se puede escribir<br />
+                  <code class="text-success"> BigDecimal a = op(b, PLUS, c, TIMES, d); </code>
+                  <br />
+                </div>
+                <p>
+                  Nótese la auscencia de parentesis para expresar precedencia. Es un experimento, tiene 10 descargas,
+                  nadie lo usa en el mundo real. Para una implementación excelente de sobrecarga de operadores en Java,
+                  véase <a href="http://amelentev.github.io/java-oo/" target="_blank">Java-OO</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a href="https://github.com/pablogrisafi1975/powermock-legacy/" target="_blank" class="panel-title">Powermock-legacy
+                </a>
+              </div>
+              <div class="panel-body">
+                <img src="img/powermock-legacy.png" alt="powermock-legacy icon" class="img-rounded pull-left" /> Es un
+                retro-fork de PowerMock que me permite hacer funcionar PowerMock en Java 1.4. Si, mi trabajo me obligaba
+                a usar esa versión pre-histórica.<br /> Estoy bastante orgulloso de esto, fue un desafío interesante
+                lograr hacer funcionar una aplicación tan moderna en un lenguaje tan desactualizado. Además mereció la
+                atención de los autores originales de PowerMock, que me enviaron un email avisándome (¡ellos a mí!) que
+                le ponían un link desde su página. Mimos al ego. En fin, lo abandoné porque gracias al cielo ya no
+                necesito usar Java 1.4 en mi trabajo.
+              </div>
+            </div>
+          </div>
         </div>
-        <p>Es un mini dsl para Java que permite trabajar con BigDecimal y BigInteger casi como si Java tuviera
-          sobrecarga de operadores. Bueno, al menos el código es mas legible y respeta la precedencia matemática de
-          operadores.</p>
-        <div class="text-center">
-          Es decir, permite que una operacion matemática como<br />
-          <code class="text-primary"> a = b + c * d </code>
-          <br /> En vez de escribirse<br />
-          <code class="text-warning"> BigDecimal a = b.add((c.multiply(d)); </code>
-          <br /> Se puede escribir<br />
-          <code class="text-success"> BigDecimal a = op(b, PLUS, c, TIMES, d); </code>
-          <br />
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a href="https://github.com/pablogrisafi1975/loderunner-fork/" class="panel-title" target="_blank">
+                  loderunner-fork (j2me)</a>
+              </div>
+              <div class="panel-body">
+                <img src="img/loderunner-fork.jpg" alt="loderunner-fork icon" class="img-rounded pull-left" /> <a
+                  href="http://en.wikipedia.org/wiki/Lode_Runner" target="_blank">LodeRunner</a> es un juego clásico de
+                1983. Es realmente extraordinario. Es adictivo, complejo y la versión original ya incluía un editor de
+                niveles, con lo cual tuvo una comunidad de creadores de niveles ya en la antig&uuml;dad. Un señ llamado
+                Fabien Gigante hizo un excelente port para teléfono celular, que yo disfruté mucho. Sin embargo tení
+                algunos bugs y cierta falta de funcionalidad que me molestaba. Como no pude contactarme con el autor,
+                terminé haciendo un fork para añadir la funcionalidad que quería y corregir esos problemas. En resumen,
+                mi fork permite elegir el nivel y se adapta mejor a distintos tamaños de pantalla.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6  ">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a href="files/Subte.zip" target="_blank" class="panel-title"> ¡Subte! (j2me) </a>
+              </div>
+              <div class="panel-body">
+                <img src="img/subte.jpg" alt="Subte icon" class="img-rounded pull-left" /> Como su nombre lo indica, es
+                simplemente un programa para ver el recorrido del subte aquí en Buenos Aires en el celular. Lo hice
+                principalmente para jugar un poco con el canvas, y pelearme un poco con j2me que estaba medio
+                desentendido. Lo bajan, lo descomprimen y copian los dos archivos (jar y jad) al celular, como
+                corresponde. Es tan fácil de usar que no se para que le puse ayuda. Bueno, aprieten 1 si no lo
+                entienden. Igual ya es muy viejo, solo incluyen la lía A hasta Puan y Carabobo. No vale la pena
+                actualizarlo en la era smartphon. <br />Nobleza obliga, si quieren ver algo muy superior, prueben <a
+                  href="http://sites.google.com/site/ortegaalfredo/smartmap" target="_blank">SmartMap</a> .Lo hizo un
+                tal Alfredo Ortega y es ¡un plano completo de Capital Federal para celular! Me deprimió mucho cuando lo
+                vi, me pasó el trapo mal. Pero bueno, es mas pesado que mi programa, que busca recorridos y todo. ¡Que
+                mas quieren en 40k!
+              </div>
+            </div>
+          </div>
         </div>
-        <p>
-          Nótese la auscencia de parentesis para expresar precedencia. Es un experimento, tiene 10 descargas, nadie lo
-          usa en el mundo real. Para una implementación excelente de sobrecarga de operadores en Java, véase <a
-            href="http://amelentev.github.io/java-oo/" target="_blank">Java-OO</a>
-        </p>
-        <div class="text-center">
-          <a href="https://github.com/pablogrisafi1975/powermock-legacy/" target="_blank"> <img
-            src="img/powermock-legacy.png" alt="powermock-legacy icon" /><span>Powermock-legacy</span>
-          </a>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a href="files/Clima.zip" target="_blank" class="panel-title">¡Clima! (j2me)</a>
+              </div>
+              <div class="panel-body">
+                <img src="img/Clima.png" alt="Clima icon" class="img-rounded pull-left" /> Se conecta a Internet y
+                obtiene información del clima actual y el pronóstico meteorológico del <a href="http://www.weather.com/"
+                  target="_blank">Weather Channel</a>, a través de <a href="http://weather.yahoo.com/" target="_blank">Yahoo
+                  Weather</a>. Lo hice principalmente para ver como parsear un XML en usando kxml, y está bastante copiado
+                de <a href="http://www.developer.com/ws/article.php/10927_3759471_1" target="_blank">éste tutorial</a>
+                para aprender a usar Lightweight UI Toolkit....que al final no usé. Se tendría que ver correctamente en
+                cualquier modelo, pero...Lo bajan, lo descomprimen y copian los dos archivos (jar y jad) al celular,
+                como corresponde.. <br />Me parece que el Weather Channel toma la temparatura del Aeroparque de Buenos
+                Aires en vez del Observatorio, así que tiende a decir que hace más frío que el real.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <a href="files/chm2html.zip" target="_blank" class="panel-title"> chm2html (Windows) </a>
+              </div>
+              <div class="panel-body">
+                <img src="img/chm2html.png" alt="chm2html icon" class="img-rounded pull-left" /> Convierte archivos chm
+                a capetas con un millón de html. Es un frontend del HH - decompile. Me servía para leer archivos chm
+                (despues de convertrlos, obvio) en mi Jornada 680. ¡Ah los viejos tiempos! Lo pueden bajar, lo ejecutan
+                y tiene la opción de instalarlo. Lo que si, antes necesitan el .NetFramework 3.0 o superior...eso lo
+                bajan de <a
+                  href="http://www.microsoft.com/downloadS/details.aspx?familyid=10CC340B-F857-4A14-83F5-25634C3BF043&amp;displaylang=es"
+                  target="_blank">acá</a>.
+              </div>
+            </div>
+          </div>
         </div>
-        <p>
-          Es un retro-fork de PowerMock que me permite hacer funcionar PowerMock en Java 1.4. Si, mi trabajo me obligaba
-          a usar esa versión pre-histórica.<br /> Estoy bastante orgulloso de esto, fue un desafío interesante lograr
-          hacer funcionar una aplicación tan moderna en un lenguaje tan desactualizado. Además mereció la atención de
-          los autores originales de PowerMock, que me enviaron un email avisándome (¡ellos a mí!) que le ponían un link
-          desde su página. Mimos al ego. En fin, lo abandoné porque gracias al cielo ya no necesito usar Java 1.4 en mi
-          trabajo.
-        </p>
-        <div class="text-center">
-          <a href="https://github.com/pablogrisafi1975/loderunner-fork/" target="_blank"> <img
-            src="img/loderunner-fork.jpg" alt="loderunner-fork icon" /> <span>loderunner-fork</span>
-          </a>
-        </div>
-        <p>
-          <a href="http://en.wikipedia.org/wiki/Lode_Runner" target="_blank">LodeRunner</a> es un juego clásico de 1983
-          que es realmente extraordinario. Es adictivo, complejo y la versión original ya incluía un editor de niveles,
-          con lo cual tuvo una comunidad de creadores de niveles ya en la antig&uuml;dad. Un señ llamado Fabien Gigante
-          hizo un excelente port para teléfono celular, que yo disfruté mucho. Sin embargo tení algunos bugs y cierta
-          falta de funcionalidad que me molestaba. Como no pude contactarme con el autor, terminé haciendo un fork para
-          añadir la funcionalidad que quería y corregir esos problemas. En resumen, mi fork permite elegir el nivel y se
-          adapta mejor a distintos tamaños de pantalla.
-        </p>
-        <div class="text-center">
-          <a href="files/Subte.zip" target="_blank"> <img src="img/subte.jpg" alt="Subte icon" /> <span>¡Subte!</span>
-          </a>
-        </div>
-        <p>
-          Como su nombre lo indica, es simplemente un programa para ver el recorrido del subte aquí en Buenos Aires en
-          el celular. Lo hice principalmente para jugar un poco con el canvas, y pelearme un poco con j2me que estaba
-          medio desentendido. Lo bajan, lo descomprimen y copian los dos archivos (jar y jad) al celular, como
-          corresponde. Es tan fácil de usar que no se para que le puse ayuda. Bueno, aprieten 1 si no lo entienden.
-          Igual ya es muy viejo, solo incluyen la lía A hasta Puan y Carabobo. No vale la pena actualizarlo en la era
-          smartphon. <br />Nobleza obliga, si quieren ver algo muy superior, prueben <a
-            href="http://sites.google.com/site/ortegaalfredo/smartmap" target="_blank">SmartMap</a> .Lo hizo un tal
-          Alfredo Ortega y es ¡un plano completo de Capital Federal para celular! Me deprimió mucho cuando lo vi, me
-          pasó el trapo mal. Pero bueno, es mas pesado que mi programa, que busca recorridos y todo. ¡Que mas quieren en
-          40k!
-        </p>
-        <div class="text-center">
-          <a href="files/Clima.zip" target="_blank"> <img src="img/Clima.png" alt="Clima icon" /> <span>¡Clima!</span>
-          </a>
-        </div>
-        <p>
-          Se conecta a Internet y obtiene información del clima actual y el pronóstico meteorológico del <a
-            href="http://www.weather.com/" target="_blank">Weather Channel</a>, a través de <a
-            href="http://weather.yahoo.com/" target="_blank">Yahoo Weather</a>. Lo hice principalmente para ver como
-          parsear un XML en usando kxml, y está bastante copiado de <a
-            href="http://www.developer.com/ws/article.php/10927_3759471_1" target="_blank">éste tutorial</a> para
-          aprender a usar Lightweight UI Toolkit....que al final no usé. Se tendría que ver correctamente en cualquier
-          modelo, pero...Lo bajan, lo descomprimen y copian los dos archivos (jar y jad) al celular, como corresponde..
-          <br />Me parece que el Weather Channel toma la temparatura del Aeroparque de Buenos Aires en vez del
-          Observatorio, así que tiende a decir que hace más frío que el real.
-        </p>
-        <div class="text-center">
-          <a href="files/chm2html.zip" target="_blank"> <img src="img/chm2html.png" alt="chm2html icon" /> <span>chm2html</span>
-          </a>
-        </div>
-        <p>
-          Convierte archivos chm a capetas con un millón de html. Es un frontend del HH - decompile. Me servía para leer
-          archivos chm (despues de convertrlos, obvio) en mi Jornada 680. ¡Ah los viejos tiempos! Lo pueden bajar, lo
-          ejecutan y tiene la opción de instalarlo. Lo que si, antes necesitan el .NetFramework 3.0 o superior...eso lo
-          bajan de <a
-            href="http://www.microsoft.com/downloadS/details.aspx?familyid=10CC340B-F857-4A14-83F5-25634C3BF043&amp;displaylang=es"
-            target="_blank">acá</a>.
-        </p>
       </div>
       <div role="tabpanel" class="tab-pane" id="redes-sociales">
         <h3>Las que si</h3>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Red y enlace al perfil</th>
-              <th>Detalles</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="http://ar.linkedin.com/in/pablogrisafi1975" target="_blank"><img
-                  src="img/linkedin.png" alt="linkedin" title="http://ar.linkedin.com/in/pablogrisafi1975"></a></td>
-              <td>Me parece que es la red laboral más importante y de hecho creo que conseguí al menos un trabajo
-                gracias a ellos. Es la que siempre tengo actualizada, más o menos.</td>
-            </tr>
-            <tr>
-              <td><a href="http://careers.stackoverflow.com/pablogrisafi1975" target="_blank"><img
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-info">
+              <div class="panel-body">
+                <a href="http://ar.linkedin.com/in/pablogrisafi1975" target="_blank"><img src="img/linkedin.png"
+                  alt="linkedin" title="http://ar.linkedin.com/in/pablogrisafi1975" class="pull-left"></a> Me parece
+                que es la red laboral más importante y de hecho creo que conseguí al menos un trabajo gracias a ellos.
+                Es la que siempre tengo actualizada, más o menos.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-info">
+              <div class="panel-body">
+                <a href="http://careers.stackoverflow.com/pablogrisafi1975" target="_blank"><img
                   src="img/careers.stackoverflow.png" alt="careers.stackoverflow"
-                  title="http://careers.stackoverflow.com/pablogrisafi1975"></a></td>
-              <td>Cuando llegué a los 576 puntos en StackOverflow me mandaron un mail diciendo "We're impressed by
-                your java tag answers on Stack Overflow. In recognition of your generous spirit, we'd like to invite you
-                to create a professional profile on Stack Overflow Careers 2.0." ¿Cómo puedo decirle que no a Joel
-                Spolsky y Jeff Atwood?
-          </tbody>
-        </table>
+                  title="http://careers.stackoverflow.com/pablogrisafi1975" class="pull-left"></a> Cuando llegué a los
+                576 puntos en StackOverflow me mandaron un mail diciendo "We're impressed by your java tag answers on
+                Stack Overflow. In recognition of your generous spirit, we'd like to invite you to create a professional
+                profile on Stack Overflow Careers 2.0." ¿Cómo puedo decirle que no a Joel Spolsky y Jeff Atwood?
+              </div>
+            </div>
+          </div>
+        </div>
         <h3>Las que no</h3>
-        <table class="table table-hover">
-          <tbody>
-            <tr>
-              <td><img src="img/facebook.png" alt="facebook"></td>
-              <td>Es demasiado social para mi gusto, ya soy un hombre grande, felizmente casado, padre de familia.</td>
-            </tr>
-            <tr>
-              <td><img src="img/googleplus.png" alt="google plus"></td>
-              <td>¿Si no tengo el original, por que voy a tener la imitación?</td>
-            </tr>
-            <tr>
-              <td><img src="img/twitter.png" alt="twitter"></td>
-              <td>¿140 caracteres? ¿Quié puede escribir tanto?</td>
-            </tr>
-            <tr>
-              <td><img src="img/tinder.png" alt="tinder"></td>
-              <td>Dije <i>casado</i></td>
-            </tr>
-            <tr>
-              <td><img src="img/orkut.png" alt="orkut"></td>
-              <td>No soy brasileño (ojo que la probé alguna vez)</td>
-            </tr>
-            <tr>
-              <td><img src="img/googlebuzz.png" alt="google buzz"></td>
-              <td>¿Alguien recuerda esto?</td>
-            </tr>
-            <tr>
-              <td><img src="img/googlewave.png" alt="google wave"></td>
-              <td>¿Y esto?</td>
-            </tr>
-            <tr>
-              <td><img src="img/myspace.png" alt="myspace"></td>
-              <td>No soy músico</td>
-            </tr>
-            <tr>
-              <td><img src="img/hi5.png" alt="hi5"></td>
-              <td>Soy mayor de 12 años.</td>
-            </tr>
-            <tr>
-              <td><img src="img/secondlife.png" alt="second life"></td>
-              <td>¿todavía existe esto? <a href="http://secondlife.com/">Parece que si</a>, por algun motivo
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/facebook.png" alt="facebook" class="pull-left">Es demasiado social para mi gusto, ya
+                soy un hombre grande, felizmente casado, padre de familia.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/googleplus.png" alt="google plus" class="pull-left">¿Si no tengo el original, por
+                que voy a tener la imitación?
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/twitter.png" alt="twitter" class="pull-left">¿140 caracteres? ¿Quién puede escribir
+                tanto?
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/tinder.png" alt="tinder" class="pull-left">Dije <i>casado</i>.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/orkut.png" alt="orkut" class="pull-left">No soy brasileño (ojo que la probé alguna
+                vez).
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/googlebuzz.png" alt="google buzz" class="pull-left">¿Alguien recuerda esto?
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/googlewave.png" alt="google wave" class="pull-left">¿Y esto? (Y yo la usé en
+                Globant...)
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/myspace.png" alt="myspace" class="pull-left">No soy músico
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/hi5.png" alt="hi5" class="pull-left">Soy mayor de 12 años.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-warning">
+              <div class="panel-body">
+                <img src="img/secondlife.png" alt="second life" class="pull-left">¿Todavía existe esto? <a
+                  href="http://secondlife.com/" target="_blank">Parece que si</a>, por algun motivo
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div role="tabpanel" class="tab-pane" id="presencia-web">
         <p>
-          Aquí hay una especie de resumen de mis actividades en Internet.<br /> ésto es lo que a mí me gustaría que
+          Aquí hay una especie de resumen de mis actividades en Internet.<br />Ésto es lo que a mí me gustaría que
           apareciera si me busco en google. Desgraciadamente, mi pasado me condena, como a todos, y hay por ahí más de
           una página web en la cual figura mi nombre, que quisiera que fuera borrada de la memoria universal. O al menos
           del cache de google.
@@ -458,8 +527,8 @@
   </div>
   <div class="container">
     <div id="back-to-top" class="start-hidden">
-      <a href="#top" title="Volver al principio">
-        <span class="glyphicon glyphicon-arrow-up"></span> Volver al principio
+      <a href="#top" title="Volver al principio"> <span class="glyphicon glyphicon-arrow-up"></span> Volver al
+        principio
       </a>
     </div>
   </div>

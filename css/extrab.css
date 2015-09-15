@@ -15,6 +15,12 @@ body {
 	margin-top: 60px;
 }
 
+#proyectos img{
+	margin-right: 15px;
+}
+#redes-sociales img{
+	margin-right: 15px;
+}
 .modal {
 	/*
 	http://stackoverflow.com/questions/19960162/bootstrap-3-modal-fires-and-causes-page-to-shift-to-the-left-momentarily-brows
