@@ -4,11 +4,14 @@ html {
 }
 
 body {
-	/* Margin bottom by footer height */
-/* 	margin-bottom: 60px; */
 	/* always show vertical scroll, to avoid center jumps*/
 	overflow-y: scroll;
 	font-family: 'Roboto', serif;
+	/*
+	http://stackoverflow.com/questions/19288546/how-can-i-prevent-body-scrollbar-and-shifting-when-twitter-bootstrap-modal-dialo
+	*/
+	padding-right: 0px !important;
+	margin-right: 0px !important;
 }
 
 .btn-responsive-text {
@@ -44,12 +47,7 @@ body {
 	margin-right: 15px;
 }
 
-.modal {
-	/*
-	http://stackoverflow.com/questions/19960162/bootstrap-3-modal-fires-and-causes-page-to-shift-to-the-left-momentarily-brows
-	*/
-	overflow-y: scroll;
-}
+
 
 .modal-open {
 	/*

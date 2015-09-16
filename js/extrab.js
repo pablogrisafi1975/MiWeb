@@ -32,8 +32,8 @@ $(function() {
 	});
 	$('#small-picture').click(function() {
 		$('#iframe-modal').attr('src', 'pic-modal.html');
-		$('#modal-title').text('Linda foto, eh!');
-		$('.modal-body').css('height', 250)
+		$('#modal-title').text('¡Linda foto!');
+		$('.modal-body').css('height', 350)
 		$('.modal').modal({
 			show : true
 		});
