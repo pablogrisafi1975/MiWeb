@@ -1,4 +1,7 @@
 $(function() {
+	$('.navbar-collapse a').click(function(){
+	    $(".navbar-collapse").collapse('hide');
+	});
 	$('#netfirms-link').click(function() {
 		$('#iframe-modal').attr('src', 'oldwebs/netfirms/netfirms.html');
 		$('#modal-title').text('Mi vieja página en NetFirms');

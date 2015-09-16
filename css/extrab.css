@@ -5,7 +5,7 @@ html {
 
 body {
 	/* Margin bottom by footer height */
-	margin-bottom: 60px;
+/* 	margin-bottom: 60px; */
 	/* always show vertical scroll, to avoid center jumps*/
 	overflow-y: scroll;
 	font-family: 'Roboto', serif;
@@ -35,7 +35,6 @@ body {
 		margin-top: 50px;
 	}
 }
-
 
 #proyectos img {
 	margin-right: 15px;
@@ -76,12 +75,13 @@ body {
 .footer {
 	position: static;
 	bottom: 0;
-	width: 1170px; /* Set the fixed height of the footer here */
-	background-color: #f5f5f5;
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	height: 60px;
+}
+
+.footer .container {
+	background-color: #f5f5f5;
 }
 
 .extra-space-bottom {
