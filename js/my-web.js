@@ -22,9 +22,7 @@ function uiSocialYes() {
 		scope : {
 			url : "@url",
 			iconSrc : "@iconSrc",
-			iconAlt : "@iconAlt",
-			html : "@html"
-
+			iconAlt : "@iconAlt"
 		},
 		controller : function() {
 
@@ -38,14 +36,41 @@ function uiSocialYes() {
 						'<ui-link url="{{url}}">',
 							'<img src="{{iconSrc}}" alt="{{iconAlt}}" title="{{url}}" class="pull-left">',
 						'</ui-link>',
-						'{{html}}',
+						'<span ng-transclude></span>',
 					'</div>', 
 				'</div>', 
-			'</div>' ].join()
+			'</div>' ].join('')
+	};
+}
+function uiSocialNo() {
+	return {
+		restrict : 'E',
+		replace : true,
+		transclude : true,
+		scope : {
+			url : "@url",
+			iconSrc : "@iconSrc",
+			iconAlt : "@iconAlt"
+		},
+		controller : function() {
+			
+		},
+		link : function($scope, $element, $attrs) {
+		},
+		template : [
+	        '<div class="col-md-4">',
+	        	'<div class="panel panel-warning">',
+	        		'<div class="panel-body">',
+	        			'<img src="{{iconSrc}}" alt="{{iconAlt}}" class="pull-left">',
+	        			'<span ng-transclude></span>',
+	        		'</div>',
+	        	'</div>',
+	        '</div>'].join('')
 	};
 }
 
 angular.module('myWebApp', [])
 	.directive('uiLink', uiLink)
 	.directive('uiSocialYes', uiSocialYes)
+	.directive('uiSocialNo', uiSocialNo)
 	;
