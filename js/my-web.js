@@ -69,8 +69,36 @@ function uiSocialNo() {
 	};
 }
 
+function uiProject() {
+	return {
+		restrict : 'E',
+		replace : true,
+		transclude : true,
+		scope : {
+			url : "@url",
+			title : "@title"
+		},
+		controller : function() {
+			
+		},
+		link : function($scope, $element, $attrs) {
+		},
+		template : [
+		    '<div class="col-md-6 ">' +
+		       '<div class="panel panel-info">' +
+		           '<div class="panel-heading">' +
+		             '<ui-link url="{{url}}" class="panel-title">{{title}}</ui-link>' +
+		           '</div>' +
+		        '<div class="panel-body">' +
+		           '<span ng-transclude></span>' +
+		        '</div>' +
+		    '</div>' ].join('')
+	};
+}
+
 angular.module('myWebApp', [])
 	.directive('uiLink', uiLink)
 	.directive('uiSocialYes', uiSocialYes)
 	.directive('uiSocialNo', uiSocialNo)
+	.directive('uiProject', uiProject)
 	;
