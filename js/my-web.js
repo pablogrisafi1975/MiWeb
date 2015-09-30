@@ -112,8 +112,46 @@ function uiProject() {
 
 function TabHeaderController($location) {
 	this.isActive = function(viewLocation) {
-		console.log('$location.path(): ' + $location.path() + ' viewLocation: ' + viewLocation + ' ' + (viewLocation === $location.path()));
 		return viewLocation === $location.path();
+	};
+}
+
+function DialogController($location) {
+	this.netfirms = function(){
+		$('#iframe-modal').attr('src', 'oldwebs/netfirms/netfirms.html');
+		$('#modal-title').text('Mi vieja página en NetFirms');
+		$('.modal-body').css('height', 500)
+		$('.modal').modal({
+			show : true
+		});
+		$('.openifrmahere').find('iframe').load(function() {
+			$('.loading').hide();
+		});
+		return false;
+	};
+	
+	this.geocities = function(){
+		$('#iframe-modal').attr('src', 'oldwebs/geocities/zzgeo-INDEX.HTML');
+		$('#modal-title').text('Mi vieja página en GeoCities');
+		$('.modal-body').css('height', 550)
+		$('.modal').modal({
+			show : true
+		});
+		$('.openifrmahere').find('iframe').load(function() {
+			$('.loading').hide();
+		});
+	};
+	
+	this.foto = function(e) {
+		$('#iframe-modal').attr('src', 'pic-modal.html');
+		$('#modal-title').text('¡Linda foto!');
+		$('.modal-body').css('height', 350)
+		$('.modal').modal({
+			show : true
+		});
+		$('.openifrmahere').find('iframe').load(function() {
+			$('.loading').hide();
+		});
 	};
 }
 
@@ -123,5 +161,6 @@ angular.module('myWebApp', ['ngRoute'])
 	.directive('uiSocialNo', uiSocialNo)
 	.directive('uiProject', uiProject)
 	.controller('TabHeaderController', TabHeaderController)
+	.controller('DialogController', DialogController)
 	.config(router)
 	;

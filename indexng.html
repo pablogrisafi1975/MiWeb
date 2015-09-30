@@ -24,12 +24,12 @@
     <nav class="navbar navbar-default navbar-fixed-top container">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <div class="navbar-header" ng-controller="DialogController as dialogController">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-tab">
             <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#" id="small-picture"> <img alt="foto chiquita" src="img/fotito.jpg"
+          <a class="navbar-brand" ng-click = "dialogController.foto()"> <img alt="foto chiquita" src="img/fotito.jpg"
             class="small-picture img-rounded " />
           </a>
         </div>

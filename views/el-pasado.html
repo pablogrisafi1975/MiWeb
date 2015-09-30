@@ -1,5 +1,5 @@
 ﻿
-<div role="tabpanel" class="tab-pane" id="el-pasado">
+<div role="tabpanel" class="tab-pane" id="el-pasado" ng-controller="DialogController as dialogController">
   <p>
     Antes de tener ésta simpática web armada con boostrap, tuve otra en el mismo host (
     <ui-link url="http://x10hosting.com/">x10hosting</ui-link>
@@ -9,7 +9,7 @@
   <p>Y antes de eso, otra muy parecida en Google Sites, pero Google dió de baja ese servicio.</p>
   <p>Y antes de eso, otra muy parecida en Google Pages, pero Google dió de baja ese servicio también.</p>
   <p>
-    Y antes de eso, otra muy pequeña en Netfirms, que se puede ver aún <a href="#" id="netfirms-link">haciendo click
+    Y antes de eso, otra muy pequeña en Netfirms, que se puede ver aún <a  ng-click="dialogController.netfirms()">haciendo click
       aquí</a>
   </p>
   <p>
@@ -19,7 +19,7 @@
     encontré un backup y lo restauré y ahora pueden disfrutar ese monstruo en todo su esplendor.
   </p>
   <div class="col-sm-6 col-sm-offset-3 col-xs-12 ">
-    <button id="geocities-buton" class="btn btn-danger btn-block btn-responsive-text">
+    <button  ng-click="dialogController.geocities()" class="btn btn-danger btn-block btn-responsive-text">
       Atención: Riesgo de severo daño ocular si hace click.<br />Prosiga por su cuenta y riesgo
     </button>
   </div>
