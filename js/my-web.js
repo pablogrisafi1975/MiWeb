@@ -1,3 +1,17 @@
+function router ($routeProvider, $locationProvider) {
+	  $routeProvider
+	  	.when('/bienvenido', {templateUrl: 'views/bienvenido.html'})
+	  	.when('/contacto', {templateUrl: 'views/contacto.html'})
+	  	.when('/experiencia', {templateUrl: 'views/experiencia.html'})
+	  	.when('/proyectos', {templateUrl: 'views/proyectos.html'})
+	  	.when('/redes-sociales', {templateUrl: 'views/redes-sociales.html'})
+	  	.when('/presencia-web', {templateUrl: 'views/presencia-web.html'})
+	  	.when('/el-pasado', {templateUrl: 'views/el-pasado.html'})
+	  	.otherwise({
+	  		redirectTo: '/bienvenido'
+	  	});
+	
+};
 function uiLink() {
 	return {
 		restrict : 'E',
@@ -96,9 +110,18 @@ function uiProject() {
 	};
 }
 
-angular.module('myWebApp', [])
+function TabHeaderController($location) {
+	this.isActive = function(viewLocation) {
+		console.log('$location.path(): ' + $location.path() + ' viewLocation: ' + viewLocation + ' ' + (viewLocation === $location.path()));
+		return viewLocation === $location.path();
+	};
+}
+
+angular.module('myWebApp', ['ngRoute'])
 	.directive('uiLink', uiLink)
 	.directive('uiSocialYes', uiSocialYes)
 	.directive('uiSocialNo', uiSocialNo)
 	.directive('uiProject', uiProject)
+	.controller('TabHeaderController', TabHeaderController)
+	.config(router)
 	;
