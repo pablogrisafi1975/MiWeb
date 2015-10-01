@@ -1,6 +1,8 @@
 $(function() {
 	$('.navbar-collapse a').click(function() {
-		$(".navbar-collapse").collapse('hide');
+		if($('#small-screen-menu').is(':visible')){
+			$(".navbar-collapse").collapse('hide');
+		}
 	});
 	$("a[href='#top']").click(function() {
 		$("html, body").animate({
@@ -19,6 +21,3 @@ $(function() {
 	});
 });
 
-function closeModal() {
-	$('.modal').modal('hide');
-}
