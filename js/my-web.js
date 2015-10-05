@@ -46,9 +46,9 @@ function uiSocialYes() {
 		template : [
 			'<div class="col-md-6">',
 				'<div class="panel panel-info">',
-					'<div class="panel-body">',
+					'<div class="panel-body">AAAA',
 						'<ui-link url="{{url}}">',
-							'<img src="{{iconSrc}}" alt="{{iconAlt}}" title="{{url}}" class="pull-left">',
+							'<img ng-src="{{iconSrc}}?{{url}}" alt="{{iconAlt}}" title="{{url}}" class="pull-left">',
 						'</ui-link>',
 						'<span ng-transclude></span>',
 					'</div>', 
@@ -98,7 +98,7 @@ function uiProject() {
 		link : function($scope, $element, $attrs) {
 		},
 		template : [
-		    '<div class="col-md-6 ">' +
+		    '<div class="col-md-6">' +
 		       '<div class="panel panel-info">' +
 		           '<div class="panel-heading">' +
 		             '<ui-link url="{{url}}" class="panel-title">{{title}}</ui-link>' +
@@ -155,6 +155,28 @@ function DialogController($location) {
 	};
 }
 
+function ScrollController($window, $scope) {
+	var vm = this;
+	
+	vm.scrollPos = 0;
+
+    $window.onscroll = function(){
+        vm.scrollPos = document.body.scrollTop || document.documentElement.scrollTop || 0;
+        $scope.$apply();
+    };
+    
+    this.showScrollToTop = function(){
+    	return vm.scrollPos > 100;
+    }
+    
+	this.scrollToTop = function() {
+		$("html, body").animate({
+			scrollTop : 0
+		}, "slow");
+		return false;
+	}
+}
+
 angular.module('myWebApp', ['ngRoute'])
 	.directive('uiLink', uiLink)
 	.directive('uiSocialYes', uiSocialYes)
@@ -162,5 +184,6 @@ angular.module('myWebApp', ['ngRoute'])
 	.directive('uiProject', uiProject)
 	.controller('TabHeaderController', TabHeaderController)
 	.controller('DialogController', DialogController)
+	.controller('ScrollController', ScrollController)
 	.config(router)
 	;

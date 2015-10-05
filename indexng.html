@@ -49,9 +49,9 @@
     </nav>
   </div>
   <div class="container" id="my-tabs" ng-view></div>
-  <div class="container">
-    <div id="back-to-top" class="start-hidden">
-      <a href="#top" title="Volver al principio"> <span class="glyphicon glyphicon-arrow-up"></span> Volver al
+  <div class="container" ng-controller="ScrollController as scrollController">
+    <div id="back-to-top" ng-show="scrollController.scrollPos > 100">
+      <a title="Volver al principio" ng-click = "scrollController.scrollToTop()"> <span class="glyphicon glyphicon-arrow-up"></span> Volver al
         principio
       </a>
     </div>

@@ -59,7 +59,9 @@ body {
 .start-hidden {
 	display: none;
 }
-
+.show {
+	display: block;
+}
 .page-header {
 	border-bottom-width: 0px;
 	margin-bottom: 1px;
@@ -116,4 +118,9 @@ p code {
 .modal-backdrop {
 	/* fixing a bug in cosmo=metro*/
 	z-index: -1 !important;
+}
+
+a[ng-click]{
+	/* so links without href do not have a text cursor*/
+    cursor: pointer;
 }
