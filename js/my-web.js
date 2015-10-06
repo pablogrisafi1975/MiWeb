@@ -1,17 +1,25 @@
-function router ($routeProvider, $locationProvider) {
-	  $routeProvider
-	  	.when('/bienvenido', {templateUrl: 'views/bienvenido.html'})
-	  	.when('/contacto', {templateUrl: 'views/contacto.html'})
-	  	.when('/experiencia', {templateUrl: 'views/experiencia.html'})
-	  	.when('/proyectos', {templateUrl: 'views/proyectos.html'})
-	  	.when('/redes-sociales', {templateUrl: 'views/redes-sociales.html'})
-	  	.when('/presencia-web', {templateUrl: 'views/presencia-web.html'})
-	  	.when('/el-pasado', {templateUrl: 'views/el-pasado.html'})
-	  	.otherwise({
-	  		redirectTo: '/bienvenido'
-	  	});
+function routeConstants(){
+	return {
+		routes : {
+			'bienvenido' : 'Bienvenido',	
+			'contacto' : 'Contacto',	
+			'experiencia' : 'Experiencia',	
+			'proyectos' : 'Proyectos',	
+			'redes-sociales' : 'Redes Sociales',	
+			'presencia-web' : 'Presencia Web',	
+			'el-pasado' : 'El pasado',
+		}
+	};
 };
-function uiSelectedSmall($location) {
+
+function router ($routeProvider, $locationProvider, routeConstants) {
+	var routes = routeConstants.routes;
+	for(var route in routes){
+		$routeProvider.when('/' + route, {templateUrl: 'views/' +route  + '.html'})
+	}
+	$routeProvider.otherwise({redirectTo: '/bienvenido'});
+};
+function uiSelectedSmall() {
 	return {
 		restrict : 'E',
 		replace : true,
@@ -22,8 +30,25 @@ function uiSelectedSmall($location) {
 		},
 		template : [
 		    '<ul class="nav navbar-nav visible-xs-inline-block">',
-                '<li class="active"><a >{{tabHeaderController.locationPath()}}</a></li>', 
+                '<li class="active"><a >{{tabHeaderController.locationName()}}</a></li>', 
             '</ul>'].join(' ')
+	};
+}
+function uiMenuItem() {
+	return {
+		restrict : 'E',
+		replace : true,
+		transclude : true,
+		controller : 'TabHeaderController',
+		controllerAs : 'tabHeaderController',
+		scope : {
+			key : "@key"
+		},
+		link : function($scope, $element, $attrs) {
+		},
+		template : ['<li ng-class="{ active: tabHeaderController.isActive(\'/{{key}}\')}">',
+		            	'<a href="#{{key}}">{{tabHeaderController.locationName(key)}}</a>',
+		            '</li>'].join(' ')
 	};
 }
 function uiLink() {
@@ -62,7 +87,7 @@ function uiSocialYes() {
 				'<div class="panel panel-info">',
 					'<div class="panel-body">AAAA',
 						'<ui-link url="{{url}}">',
-							'<img ng-src="{{iconSrc}}?{{url}}" alt="{{iconAlt}}" title="{{url}}" class="pull-left">',
+							'<img ng-src="{{iconSrc}}" alt="{{iconAlt}}" title="{{url}}" class="pull-left">',
 						'</ui-link>',
 						'<span ng-transclude></span>',
 					'</div>', 
@@ -124,13 +149,16 @@ function uiProject() {
 	};
 }
 
-function TabHeaderController($location) {
+function TabHeaderController($location, routeConstants) {
 	var vm = this;
 	vm.isActive = function(viewLocation) {
 		return viewLocation === $location.path();
 	};
-	vm.locationPath = function () {
-	    return $location.path();
+	vm.locationName = function (key) {
+		if(arguments.length === 0){
+			return routeConstants.routes[$location.path().substr(1)];
+		}
+		return routeConstants.routes[key];
 	};
 }
 
@@ -196,11 +224,13 @@ function ScrollController($window, $scope) {
 }
 
 angular.module('myWebApp', ['ngRoute'])
+	.constant('routeConstants', routeConstants())
 	.directive('uiLink', uiLink)
 	.directive('uiSelectedSmall', uiSelectedSmall)
 	.directive('uiSocialYes', uiSocialYes)
 	.directive('uiSocialNo', uiSocialNo)
 	.directive('uiProject', uiProject)
+	.directive('uiMenuItem', uiMenuItem)
 	.controller('TabHeaderController', TabHeaderController)
 	.controller('DialogController', DialogController)
 	.controller('ScrollController', ScrollController)
