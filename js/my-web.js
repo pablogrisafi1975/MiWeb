@@ -15,7 +15,7 @@ function routeConstants(){
 function router ($routeProvider, $locationProvider, routeConstants) {
 	var routes = routeConstants.routes;
 	for(var route in routes){
-		$routeProvider.when('/' + route, {templateUrl: 'views/' +route  + '.html'})
+		$routeProvider.when('/' + route, {templateUrl: 'views/' + route + '.html'})
 	}
 	$routeProvider.otherwise({redirectTo: '/bienvenido'});
 };
@@ -201,7 +201,7 @@ function DialogController($location) {
 	};
 }
 
-function ScrollController($window, $scope) {
+function ScrollController($window, $scope, $routeParams) {
 	var vm = this;
 	
 	vm.scrollPos = 0;
@@ -215,12 +215,21 @@ function ScrollController($window, $scope) {
     	return vm.scrollPos > 100;
     }
     
-	this.scrollToTop = function() {
-		$("html, body").animate({
+	vm.scrollToTop = function() {
+		$('html, body').animate({
 			scrollTop : 0
-		}, "slow");
+		}, 'slow');
 		return false;
 	}
+	vm.fastScrollToTop = function() {
+		$('html, body').scrollTop(0);
+		return false;
+	}
+	
+
+	$scope.$on('$routeChangeSuccess', function(event) {
+		vm.fastScrollToTop();
+	});
 }
 
 angular.module('myWebApp', ['ngRoute'])
