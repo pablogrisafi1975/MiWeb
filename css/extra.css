@@ -56,15 +56,17 @@ body {
 	overflow-y: scroll;
 }
 
-.start-hidden {
-	display: none;
-}
+
 .show {
 	display: block;
 }
 .page-header {
 	border-bottom-width: 0px;
 	margin-bottom: 1px;
+}
+
+#small-screen-menu {
+	margin-top: 26px!important;
 }
 
 .small-picture {

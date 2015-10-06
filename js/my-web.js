@@ -10,8 +10,22 @@ function router ($routeProvider, $locationProvider) {
 	  	.otherwise({
 	  		redirectTo: '/bienvenido'
 	  	});
-	
 };
+function uiSelectedSmall($location) {
+	return {
+		restrict : 'E',
+		replace : true,
+		transclude : true,
+		controller : 'TabHeaderController',
+		controllerAs : 'tabHeaderController',
+		link : function($scope, $element, $attrs) {
+		},
+		template : [
+		    '<ul class="nav navbar-nav visible-xs-inline-block">',
+                '<li class="active"><a >{{tabHeaderController.locationPath()}}</a></li>', 
+            '</ul>'].join(' ')
+	};
+}
 function uiLink() {
 	return {
 		restrict : 'E',
@@ -111,8 +125,12 @@ function uiProject() {
 }
 
 function TabHeaderController($location) {
-	this.isActive = function(viewLocation) {
+	var vm = this;
+	vm.isActive = function(viewLocation) {
 		return viewLocation === $location.path();
+	};
+	vm.locationPath = function () {
+	    return $location.path();
 	};
 }
 
@@ -179,6 +197,7 @@ function ScrollController($window, $scope) {
 
 angular.module('myWebApp', ['ngRoute'])
 	.directive('uiLink', uiLink)
+	.directive('uiSelectedSmall', uiSelectedSmall)
 	.directive('uiSocialYes', uiSocialYes)
 	.directive('uiSocialNo', uiSocialNo)
 	.directive('uiProject', uiProject)

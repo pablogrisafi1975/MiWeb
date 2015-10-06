@@ -22,26 +22,29 @@
   <a id="top"></a>
   <div class="container page-header">
     <nav class="navbar navbar-default navbar-fixed-top container">
-      <div class="container-fluid">
+      <div class="container-fluid" ng-controller="TabHeaderController as tabHeaderController">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header" ng-controller="DialogController as dialogController">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-tab" id="small-screen-menu">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-tab"
+            id="small-screen-menu">
             <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" ng-click = "dialogController.foto()"> <img alt="foto chiquita" src="img/fotito.jpg"
-            class="small-picture img-rounded " />
+          <a class="navbar-brand" ng-click="dialogController.foto()"> <img alt="foto chiquita" src="img/fotito.jpg"
+            class="small-picture img-rounded" />
           </a>
+          <ui-selected-small ></ui-selected-small>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="menu-tab" ng-controller="TabHeaderController as tabHeaderController">
+        <div class="collapse navbar-collapse" id="menu-tab" >
           <ul class="nav navbar-nav">
-            <li ng-class="{ active: tabHeaderController.isActive('/bienvenido')}"><a href="#bienvenido" >Bienvenido</a></li>
-            <li ng-class="{ active: tabHeaderController.isActive('/contacto')}"><a href="#contacto" >Contacto</a></li>
-            <li ng-class="{ active: tabHeaderController.isActive('/experiencia')}"><a href="#experiencia" >Experiencia</a></li>
+            <li ng-class="{ active: tabHeaderController.isActive('/bienvenido')}"><a href="#bienvenido">Bienvenido</a></li>
+            <li ng-class="{ active: tabHeaderController.isActive('/contacto')}"><a href="#contacto">Contacto</a></li>
+            <li ng-class="{ active: tabHeaderController.isActive('/experiencia')}"><a href="#experiencia">Experiencia</a></li>
             <li ng-class="{ active: tabHeaderController.isActive('/proyectos')}"><a href="#proyectos">Proyectos</a></li>
             <li ng-class="{ active: tabHeaderController.isActive('/redes-sociales')}"><a href="#redes-sociales">Redes sociales</a></li>
-            <li ng-class="{ active: tabHeaderController.isActive('/presencia-web')}"><a href="#presencia-web">Presencia web</a></li>
+            <li ng-class="{ active: tabHeaderController.isActive('/presencia-web')}"><a href="#presencia-web">Presencia
+                web</a></li>
             <li ng-class="{ active: tabHeaderController.isActive('/el-pasado')}"><a href="#el-pasado">El pasado</a></li>
           </ul>
         </div>
@@ -51,8 +54,8 @@
   <div class="container" id="my-tabs" ng-view></div>
   <div class="container" ng-controller="ScrollController as scrollController">
     <div id="back-to-top" ng-show="scrollController.scrollPos > 100">
-      <a title="Volver al principio" ng-click = "scrollController.scrollToTop()"> <span class="glyphicon glyphicon-arrow-up"></span> Volver al
-        principio
+      <a title="Volver al principio" ng-click="scrollController.scrollToTop()"> <span
+        class="glyphicon glyphicon-arrow-up"></span> Volver al principio
       </a>
     </div>
   </div>
